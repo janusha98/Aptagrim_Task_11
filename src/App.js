@@ -1,6 +1,6 @@
 import Header from "./Components/header";
 import SideNavigation from "./Components/navigation";
-import { Col, Row, Grid } from "react-bootstrap";
+import { Col, Row } from "reactstrap";
 import Profile from "./Components/profile";
 
 function App() {
@@ -15,21 +15,19 @@ function App() {
   };
   return (
     <>
-      <Grid>
-        <Row className="show-grid">
-          <Col lg={3}>
-            <div style={styles.contentDiv}>
-              <SideNavigation></SideNavigation>
-            </div>
-          </Col>
-          <Col lg={9}>
-            <Header></Header>
-            <Row>
-              <Profile />
-            </Row>
-          </Col>
-        </Row>
-      </Grid>
+      <Row>
+        <Col lg={3}>
+          <div style={styles.contentDiv}>
+            <SideNavigation></SideNavigation>
+          </div>
+        </Col>
+        <Col lg={9}>
+          <Header></Header>
+          <Row>
+            <Profile />
+          </Row>
+        </Col>
+      </Row>
     </>
   );
 }
