@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import {
   Row,
   Col,
@@ -71,13 +71,8 @@ const Profile = () => {
                 drop="end"
                 variant="default"
                 onClick={handleShow}
-              >
-                <Dropdown.ItemText>Select</Dropdown.ItemText>
-                <Dropdown.Item as="button">Action</Dropdown.Item>
-                <Dropdown.Item as="button">Another action</Dropdown.Item>
-                <Dropdown.Item as="button">Something else</Dropdown.Item>
-              </StyledDropdown>
-              <DropModal show={show} onHide={handleClose}/>
+              ></StyledDropdown>
+              <DropModal show={show} onHide={handleClose} />
             </div>
           </Row>
           <Row className="mt-5">
@@ -86,6 +81,7 @@ const Profile = () => {
                 <Dropdown.Header>Offer Letter Template</Dropdown.Header>
                 <StyledDropdown
                   id="dropdown-item-button"
+                  className="w-100"
                   title="Select"
                   drop="end"
                   variant="default"
