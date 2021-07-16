@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { FaGem, FaHeart } from "react-icons/fa";
+import {
+  GrArticle,
+  FaCog,
+  FaUserTie,
+  FaColumns,
+  FaThList
+} from "react-icons/fa";
 import {
   Menu,
   MenuItem,
@@ -14,7 +20,7 @@ const SideNavigation = () => {
   const [collapsed, setCollapsed] = useState(false);
   const styles = {
     sideBarHeight: {
-      height: "100vh"
+      height: "145vh"
     },
     menuIcon: {
       float: "right",
@@ -32,9 +38,11 @@ const SideNavigation = () => {
         </div>
       </SidebarHeader>
       <Menu iconShape="square">
-        <MenuItem icon={<FaGem />}> Dashboard</MenuItem>
-        <MenuItem icon={<FaGem />}>Employees</MenuItem>
-        <SubMenu title="Stages" icon={<FaHeart />}>
+        <MenuItem icon={<FaColumns />}> Dashboard</MenuItem>
+        <MenuItem icon={<FaUserTie />} href="/employees">
+          Employees
+        </MenuItem>
+        <SubMenu title="Stages" icon={<FaThList />}>
           <MenuItem>Offer Letter</MenuItem>
           <MenuItem>Skill Matrix</MenuItem>
           <MenuItem>Know Your Company</MenuItem>
@@ -42,7 +50,7 @@ const SideNavigation = () => {
           <MenuItem>Feedback</MenuItem>
           <MenuItem>Background Check</MenuItem>
         </SubMenu>
-        <MenuItem icon={<FaGem />}>Settings</MenuItem>
+        <MenuItem icon={<FaCog />}>Settings</MenuItem>
       </Menu>
     </ProSidebar>
   );

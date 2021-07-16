@@ -2,6 +2,9 @@ import Header from "./Components/header";
 import SideNavigation from "./Components/navigation";
 import { Col, Row } from "reactstrap";
 import Profile from "./Components/profile";
+import Employee from "./Components/Employee";
+// import { Link, Switch, Route } from "react-router";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   const styles = {
@@ -24,7 +27,17 @@ function App() {
         <Col lg={9}>
           <Header></Header>
           <Row>
-            <Profile />
+            <Router>
+              <Switch>
+                <Route path="/employees">
+                  <Employee />
+                </Route>
+                <Route path="/profile">
+                  <Profile />
+                </Route>
+              </Switch>
+            </Router>
+            {/* <Employee /> */}
           </Row>
         </Col>
       </Row>

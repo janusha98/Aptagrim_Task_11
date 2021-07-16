@@ -7,16 +7,15 @@ import {
   ListGroupItem,
   DropdownButton,
   Dropdown,
-  Container,
-  Modal
+  Container
 } from "react-bootstrap";
 import styled from "styled-components";
 import Keytool from "./keyTools";
 import DropModal from "./Modal";
+import { CardImage, CardSec } from "./Employee";
 
 const StyledDropdown = styled(DropdownButton)`
   border: 1px solid grey;
-  /* width: 50%; */
 `;
 
 const Profile = () => {
@@ -28,8 +27,8 @@ const Profile = () => {
     <Container>
       <Row className="mt-3">
         <Col lg={4}>
-          <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src="Assets/profile.png" />
+          <CardSec style={{ width: "18rem" }}>
+            <CardImage variant="top" src="Assets/profile.png" />
             <Card.Body className="text-center">
               <Card.Title>John</Card.Title>
               <Card.Text>
@@ -59,7 +58,7 @@ const Profile = () => {
                 <p>Hyderabad, India</p>
               </ListGroupItem>
             </ListGroup>
-          </Card>
+          </CardSec>
         </Col>
         <Col lg={8}>
           <Row className="mt-5">
@@ -67,6 +66,7 @@ const Profile = () => {
               <Dropdown.Header>Key Policy Documents</Dropdown.Header>
               <StyledDropdown
                 id="dropdown-item-button"
+                className="w-100"
                 title="Select"
                 drop="end"
                 variant="default"
@@ -75,6 +75,7 @@ const Profile = () => {
               <DropModal show={show} onHide={handleClose} />
             </div>
           </Row>
+          <span className="border-bottom"></span>
           <Row className="mt-5">
             <Col lg={4}>
               <div>

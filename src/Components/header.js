@@ -1,13 +1,15 @@
 import React from "react";
-import { Nav, Navbar, Form, Button } from "react-bootstrap";
+import { Nav, Navbar, Form, Button, InputGroup, Col } from "react-bootstrap";
 import styled from "styled-components";
+import { FaBell, FaCommentDots, FaUserAlt, FaSistrix } from "react-icons/fa";
 const Snavbar = styled(Navbar)`
   background-color: #fcde73;
+  padding: 30px;
 `;
 const Header = () => {
   return (
     <Snavbar bg="#FCDE73" expand="lg">
-      <Navbar.Brand href="#">Employees</Navbar.Brand>
+      <Navbar.Brand href="/employees">Employees</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll" className="justify-content-end">
         <Nav
@@ -15,21 +17,27 @@ const Header = () => {
           style={{ maxHeight: "100px" }}
           navbarScroll
         >
-          <Nav.Link href="#action1">Home</Nav.Link>
-          <Nav.Link href="#action2">Link</Nav.Link>
-          <Nav.Link href="#" disabled>
-            Link
+          <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="mr-2"
+              aria-label="Search"
+            />
+            <Button>
+              <FaSistrix />
+            </Button>
+          </Form>
+          <Nav.Link href="#action1">
+            <FaBell />
+          </Nav.Link>
+          <Nav.Link href="#action2">
+            <FaCommentDots />
+          </Nav.Link>
+          <Nav.Link href="#">
+            <FaUserAlt />
           </Nav.Link>
         </Nav>
-        <Form className="d-flex">
-          <Form.Control
-            type="search"
-            placeholder="Search"
-            className="mr-2"
-            aria-label="Search"
-          />
-          <Button>Search</Button>
-        </Form>
       </Navbar.Collapse>
     </Snavbar>
   );

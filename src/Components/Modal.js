@@ -5,6 +5,24 @@ const List = styled.li`
   list-style-type: none;
   padding: 4px;
 `;
+const ModalHeader = styled(Modal.Header)`
+  background: linear-gradient(180deg, #ffdb58 0%, rgba(255, 219, 88, 0) 100%);
+  border-bottom: none;
+`;
+const Input = styled.input`
+  margin: 3px;
+`;
+const ModalFooter = styled(Modal.Footer)`
+  justify-content: center;
+`;
+const ViewButton = styled.button`
+  width: 100%;
+  background: none;
+`;
+
+const SelectButton = styled(Button)`
+  width: 50%;
+`;
 const SelectModal = (props) => {
   const Documents = [
     "Employment Policy",
@@ -16,16 +34,16 @@ const SelectModal = (props) => {
   return (
     <>
       <Modal show={props.show} onHide={props.onHide}>
-        <Modal.Header closeButton>
+        <ModalHeader closeButton>
           <Modal.Title>Key Policy Documents</Modal.Title>
-        </Modal.Header>
+        </ModalHeader>
         <Modal.Body>
           {Documents.map((value, id) => {
             return (
               <List key={id}>
                 <Row>
                   <Col lg={8}>
-                    <input
+                    <Input
                       type="checkbox"
                       id={`custom-checkbox-${id}`}
                       name={value}
@@ -34,18 +52,18 @@ const SelectModal = (props) => {
                     <label htmlFor={`custom-checkbox-${id}`}>{value}</label>
                   </Col>
                   <Col lg={4}>
-                    <button>view</button>
+                    <ViewButton>view</ViewButton>
                   </Col>
                 </Row>
               </List>
             );
           })}
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="primary" onClick={props.onHide}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
+        <ModalFooter>
+          <SelectButton variant="warning" onClick={props.onHide}>
+            Select
+          </SelectButton>
+        </ModalFooter>
       </Modal>
     </>
   );
