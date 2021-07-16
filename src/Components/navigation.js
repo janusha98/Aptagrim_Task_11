@@ -1,12 +1,6 @@
 import { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import {
-  GrArticle,
-  FaCog,
-  FaUserTie,
-  FaColumns,
-  FaThList
-} from "react-icons/fa";
+import { FaCog, FaUserTie, FaColumns, FaThList } from "react-icons/fa";
 import {
   Menu,
   MenuItem,
@@ -15,7 +9,16 @@ import {
   SubMenu
 } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
-// import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+const Menuitem = styled(MenuItem)`
+  :hover {
+    background-color: #ffdb58;
+    padding: 5px;
+    border-radius: 10px;
+  }
+`;
+
 const SideNavigation = () => {
   const [collapsed, setCollapsed] = useState(false);
   const styles = {
@@ -38,19 +41,19 @@ const SideNavigation = () => {
         </div>
       </SidebarHeader>
       <Menu iconShape="square">
-        <MenuItem icon={<FaColumns />}> Dashboard</MenuItem>
-        <MenuItem icon={<FaUserTie />} href="/employees">
+        <Menuitem icon={<FaColumns />}> Dashboard</Menuitem>
+        <Menuitem icon={<FaUserTie />} href="/employees">
           Employees
-        </MenuItem>
+        </Menuitem>
         <SubMenu title="Stages" icon={<FaThList />}>
-          <MenuItem>Offer Letter</MenuItem>
+          <Menuitem>Offer Letter</Menuitem>
           <MenuItem>Skill Matrix</MenuItem>
           <MenuItem>Know Your Company</MenuItem>
           <MenuItem>Joining Day Information</MenuItem>
           <MenuItem>Feedback</MenuItem>
           <MenuItem>Background Check</MenuItem>
         </SubMenu>
-        <MenuItem icon={<FaCog />}>Settings</MenuItem>
+        <Menuitem icon={<FaCog />}>Settings</Menuitem>
       </Menu>
     </ProSidebar>
   );
